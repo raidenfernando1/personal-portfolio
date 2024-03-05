@@ -5,11 +5,11 @@
 </template>
 
 <script setup lang="ts">
-import navbar from "./src/components/navbar.vue";
+import navbar from '@/components/navbar.vue'
 
 useHead({
-  title: "Raiden Fernando",
-});
+  title: 'Raiden Fernando',
+})
 </script>
 
 <style>
@@ -17,7 +17,7 @@ useHead({
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Ubuntu", sans-serif;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 body {

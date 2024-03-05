@@ -5,8 +5,8 @@
         <ul>
           <li>
             <!-- logo -->
-            <NuxtLink
-              ><svg
+            <button class="nav-items">
+              <svg
                 width="40"
                 height="40"
                 viewBox="0 0 50 50"
@@ -19,19 +19,19 @@
                   fill="white"
                 />
               </svg>
-            </NuxtLink>
+            </button>
           </li>
           <li>
-            <NuxtLink>About</NuxtLink>
+            <button class="nav-items">About</button>
           </li>
           <li>
-            <NuxtLink class="nav-item">Projects</NuxtLink>
+            <button class="nav-items">Projects</button>
           </li>
           <li>
-            <NuxtLink>Skills</NuxtLink>
+            <button class="nav-items">Skills</button>
           </li>
           <li>
-            <NuxtLink> Contact </NuxtLink>
+            <button class="nav-items">Contact</button>
           </li>
         </ul>
       </nav>
@@ -40,14 +40,18 @@
 </template>
 
 <style scoped>
+.nav-wrapper {
+  padding-inline: 5%;
+  padding-block: 10px;
+  border-bottom: 1px solid #1a1a1a;
+}
+
 .nav-wrapper ul {
   list-style: none;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-inline: 5rem;
-  padding-block: 10px;
-  border-bottom: 1px solid #1a1a1a;
+  color: white;
 }
 
 .nav-wrapper li:first-child {
@@ -56,15 +60,36 @@
 
 .nav-wrapper li:last-child {
   margin-left: auto;
-  padding: 5px 10px;
+}
+
+.nav-wrapper li:last-child > .nav-items {
+  padding: 5px 15px;
   border: 1px solid white;
 }
 
-.nav-wrapper a {
-  color: white;
+.nav-wrapper li:nth-child(3) {
+  margin-inline: 4rem;
 }
 
-.nav-item {
-  margin-inline: 4rem;
+.nav-items {
+  border: none;
+  background: none;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* large screen sizes */
+@media (min-width: 1700px) {
+  .nav-wrapper ul {
+    padding-inline: 15%;
+    border-bottom: 2px solid #1a1a1a;
+  }
+}
+
+@media (min-width: 1900px) {
+  .nav-wrapper ul {
+    padding-inline: 20%;
+  }
 }
 </style>

@@ -1,16 +1,19 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 // nuxt.config.js
+import path from 'path' // Import path module
+
 export default defineNuxtConfig({
   modules: [
-    // ... other modules
     [
-      "@nuxtjs/google-fonts",
+      '@nuxtjs/google-fonts',
       {
         families: {
-          Ubuntu: true, // Load the Roboto font
+          ubuntu: true,
         },
       },
     ],
   ],
-  // ... other configurations
-});
+  alias: {
+    '@': path.resolve(__dirname, './src'),
+  },
+})
