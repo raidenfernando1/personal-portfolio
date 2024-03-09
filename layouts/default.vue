@@ -5,7 +5,7 @@
         <ul>
           <li>
             <!-- logo -->
-            <button class="nav-items">
+            <button class="nav-items" id="scale-item">
               <svg
                 width="40"
                 height="40"
@@ -31,19 +31,23 @@
             <button class="nav-items">Skills</button>
           </li>
           <li>
-            <button class="nav-items">Contact</button>
+            <button class="nav-items" id="scale-item">Contact</button>
           </li>
         </ul>
       </nav>
     </div>
   </header>
+  <slot></slot>
 </template>
 
 <style scoped>
 .nav-wrapper {
+  position: fixed;
+  top: 0;
+  width: 100%;
   padding-inline: 5%;
   padding-block: 10px;
-  border-bottom: 1px solid #1a1a1a;
+  border-bottom: 1px solid rgb(54, 56, 70);
 }
 
 .nav-wrapper ul {
@@ -65,6 +69,11 @@
 .nav-wrapper li:last-child > .nav-items {
   padding: 5px 15px;
   border: 1px solid white;
+}
+
+#scale-item:hover {
+  transition: 200ms;
+  transform: scale(1.1);
 }
 
 .nav-wrapper li:nth-child(3) {

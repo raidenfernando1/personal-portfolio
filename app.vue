@@ -1,12 +1,12 @@
 <template>
   <div>
-    <navbar />
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
   </div>
 </template>
 
 <script setup lang="ts">
-import navbar from '@/components/navbar.vue'
-
 useHead({
   title: 'Raiden Fernando',
 })
@@ -21,6 +21,6 @@ useHead({
 }
 
 body {
-  background-color: black;
+  background-color: #1f2027;
 }
 </style>
