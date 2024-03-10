@@ -5,7 +5,7 @@
         <ul>
           <li>
             <!-- logo -->
-            <button class="nav-items" id="scale-item">
+            <button class="nav-items">
               <svg
                 width="40"
                 height="40"
@@ -33,6 +33,23 @@
           <li>
             <button class="nav-items" id="scale-item">Contact</button>
           </li>
+          <li>
+            <button class="hidden-menu">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                x="0px"
+                y="0px"
+                width="50"
+                height="50"
+                fill="white"
+                viewBox="0 0 32 32"
+              >
+                <path
+                  d="M 4 7 L 4 9 L 28 9 L 28 7 Z M 4 15 L 4 17 L 28 17 L 28 15 Z M 4 23 L 4 25 L 28 25 L 28 23 Z"
+                ></path>
+              </svg>
+            </button>
+          </li>
         </ul>
       </nav>
     </div>
@@ -41,13 +58,19 @@
 </template>
 
 <style scoped>
+.hidden-menu {
+  display: none;
+}
+
 .nav-wrapper {
   position: fixed;
   top: 0;
+  bottom: 100;
   width: 100%;
   padding-inline: 5%;
-  padding-block: 10px;
-  border-bottom: 1px solid rgb(54, 56, 70);
+  padding-block: 0.6rem;
+  border-bottom: 1px solid rgb(35, 35, 35);
+  display: block;
 }
 
 .nav-wrapper ul {
@@ -55,50 +78,69 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: var(--primary-color);
 }
 
 .nav-wrapper li:first-child {
   margin-right: auto;
 }
 
-.nav-wrapper li:last-child {
+.nav-wrapper li:nth-child(5) {
   margin-left: auto;
 }
 
-.nav-wrapper li:last-child > .nav-items {
-  padding: 5px 15px;
-  border: 1px solid white;
+.nav-wrapper li:nth-child(5) > .nav-items {
+  padding: 0.3125rem 0.9375rem;
+  border: 1px solid var(--primary-color);
+}
+
+.nav-wrapper li:nth-child(2),
+.nav-wrapper li:nth-child(3),
+.nav-wrapper li:nth-child(4),
+.nav-wrapper li:nth-child(5) {
+  display: block;
 }
 
 #scale-item:hover {
-  transition: 200ms;
-  transform: scale(1.1);
+  box-shadow: 0 0 10px var(--primary-color);
 }
 
 .nav-wrapper li:nth-child(3) {
   margin-inline: 4rem;
 }
 
+.hidden-menu,
 .nav-items {
   border: none;
   background: none;
   font: inherit;
   color: inherit;
   cursor: pointer;
+  transition: 600ms;
 }
 
 /* large screen sizes */
 @media (min-width: 1700px) {
   .nav-wrapper ul {
     padding-inline: 15%;
-    border-bottom: 2px solid #1a1a1a;
   }
 }
 
 @media (min-width: 1900px) {
   .nav-wrapper ul {
     padding-inline: 20%;
+  }
+}
+
+@media (max-width: 900px) {
+  .nav-wrapper li:nth-child(2),
+  .nav-wrapper li:nth-child(3),
+  .nav-wrapper li:nth-child(4),
+  .nav-wrapper li:nth-child(5) {
+    display: none;
+  }
+  .hidden-menu {
+    display: block;
   }
 }
 </style>

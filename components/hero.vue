@@ -6,10 +6,12 @@
         Raiden Fernando<br />
         im a {{ currentWord }}<span id="typingAnimation">I</span>
       </h1>
+      <button class="project-btn">Browse my Projects</button>
+      <button class="resume-btn">Download my Resume</button>
     </div>
     <div class="right-container">
       <div class="img-wrapper">
-        <nuxt-img src="/assets/room-pic.png" alt="" class="idk" />
+        <img src="/assets/room-pic.png" alt="Discover Nuxt 3" />
       </div>
     </div>
   </header>
@@ -69,9 +71,35 @@ export default {
 
 .left-container {
   display: flex;
-  align-items: center;
-  color: white;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  color: var(--primary-color);
   font-size: 2.3rem;
+}
+
+.project-btn,
+.resume-btn {
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  transition: 600ms;
+  font: inherit;
+}
+
+.project-btn:hover,
+.resume-btn:hover {
+  box-shadow: 0 0px 10px var(--primary-color);
+}
+
+.project-btn {
+  margin-top: 30px;
+}
+
+.resume-btn {
+  margin-top: 15px;
 }
 
 .right-container {
@@ -82,7 +110,6 @@ export default {
 .img-wrapper > img {
   height: 500px;
   width: auto;
-  border: 3px solid white;
 }
 
 #typingAnimation {
