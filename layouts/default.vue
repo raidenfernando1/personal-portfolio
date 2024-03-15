@@ -1,8 +1,8 @@
 <template>
-  <header>
+  <header class="navbar">
     <div class="nav-wrapper">
       <nav>
-        <ul>
+        <ul class="nav-items-wrapper">
           <li>
             <!-- logo -->
             <button class="nav-items">
@@ -34,7 +34,7 @@
             <button class="nav-items" id="scale-item">Contact</button>
           </li>
           <li>
-            <button class="hidden-menu">
+            <button class="hidden-menu" @click="toggleNav()">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 x="0px"
@@ -53,27 +53,117 @@
         </ul>
       </nav>
     </div>
+    <nav class="hidden-nav-wrapper" v-if="isNavOpen">
+      <ul>
+        <li>
+          <button class="hidden-nav-items" @click="toggleNav()">About</button>
+        </li>
+        <li>
+          <button class="hidden-nav-items" @click="toggleNav()">Project</button>
+        </li>
+        <li>
+          <button class="hidden-nav-items" @click="toggleNav()">Skills</button>
+        </li>
+        <li>
+          <button class="hidden-nav-items" @click="toggleNav()">Contact</button>
+        </li>
+      </ul>
+    </nav>
   </header>
-  <slot></slot>
+  <hero></hero>
+  <about></about>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      isNavOpen: false,
+    }
+  },
+  methods: {
+    toggleNav() {
+      this.isNavOpen = !this.isNavOpen
+    },
+  },
+}
+</script>
+<!-- responsive -->
+<style scoped>
+.hidden-nav-wrapper {
+  position: fixed;
+  right: 0;
+  display: flex;
+  justify-content: flex-end;
+  text-align: right;
+  padding-inline: 20px;
+  padding-top: 20px;
+  border-bottom: 1px solid rgb(255, 255, 255);
+  border-left: 1px solid rgb(35, 35, 35);
+  background-color: var(--background-color);
+  animation: slide-in 500ms forwards;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(-0%);
+  }
+}
+
+.hidden-nav-wrapper ul {
+  list-style: none;
+}
+
+.hidden-nav-items {
+  padding: 0.625rem 1.875rem;
+  margin-bottom: 15px;
+  font-size: inherit;
+  background-color: transparent;
+  border: 2px solid white;
+  color: var(--primary-color);
+}
+
+@media (max-width: 600px) {
+  .hidden-nav-wrapper {
+    position: fixed;
+    right: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+  .hidden-nav-items {
+    padding: 15px 50px;
+    margin-bottom: 15px;
+  }
+}
+</style>
+
+<!-- main -->
 <style scoped>
 .hidden-menu {
   display: none;
 }
 
-.nav-wrapper {
+.navbar {
   position: fixed;
   top: 0;
-  bottom: 100;
+  width: 100%;
+}
+
+.nav-wrapper {
   width: 100%;
   padding-inline: 5%;
   padding-block: 0.6rem;
   border-bottom: 1px solid rgb(35, 35, 35);
   display: block;
+  background-color: var(--background-color);
 }
 
-.nav-wrapper ul {
+.nav-items-wrapper {
   list-style: none;
   display: flex;
   justify-content: center;
@@ -81,23 +171,23 @@
   color: var(--primary-color);
 }
 
-.nav-wrapper li:first-child {
+.nav-items-wrapper li:first-child {
   margin-right: auto;
 }
 
-.nav-wrapper li:nth-child(5) {
+.nav-items-wrapper li:nth-child(5) {
   margin-left: auto;
 }
 
-.nav-wrapper li:nth-child(5) > .nav-items {
+.nav-items-wrapper li:nth-child(5) > .nav-items {
   padding: 0.3125rem 0.9375rem;
   border: 1px solid var(--primary-color);
 }
 
-.nav-wrapper li:nth-child(2),
-.nav-wrapper li:nth-child(3),
-.nav-wrapper li:nth-child(4),
-.nav-wrapper li:nth-child(5) {
+.nav-items-wrapper li:nth-child(2),
+.nav-items-wrapper li:nth-child(3),
+.nav-items-wrapper li:nth-child(4),
+.nav-items-wrapper li:nth-child(5) {
   display: block;
 }
 
@@ -105,7 +195,7 @@
   box-shadow: 0 0 10px var(--primary-color);
 }
 
-.nav-wrapper li:nth-child(3) {
+.nav-items-wrapper li:nth-child(3) {
   margin-inline: 4rem;
 }
 
@@ -133,10 +223,10 @@
 }
 
 @media (max-width: 900px) {
-  .nav-wrapper li:nth-child(2),
-  .nav-wrapper li:nth-child(3),
-  .nav-wrapper li:nth-child(4),
-  .nav-wrapper li:nth-child(5) {
+  .nav-items-wrapper li:nth-child(2),
+  .nav-items-wrapper li:nth-child(3),
+  .nav-items-wrapper li:nth-child(4),
+  .nav-items-wrapper li:nth-child(5) {
     display: none;
   }
   .hidden-menu {

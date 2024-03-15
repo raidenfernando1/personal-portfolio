@@ -1,8 +1,6 @@
 <template>
   <div>
-    <NuxtLayout>
-      <!-- <NuxtPage /> -->
-    </NuxtLayout>
+    <NuxtLayout> </NuxtLayout>
   </div>
 </template>
 
@@ -14,7 +12,7 @@ useHead({
 
 <style>
 :root {
-  --background-color: rgb(10, 10, 10);
+  --background-color: rgb(30, 30, 30);
   --primary-color: white;
   --btn-active-color: white;
 }
