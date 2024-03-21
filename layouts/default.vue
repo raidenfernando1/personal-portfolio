@@ -22,16 +22,34 @@
             </button>
           </li>
           <li>
-            <button class="nav-items">About</button>
+            <button class="nav-items" @click.prevent="scrollToSection('about')">
+              About
+            </button>
           </li>
           <li>
-            <button class="nav-items">Projects</button>
+            <button
+              class="nav-items"
+              @click.prevent="scrollToSection('projects')"
+            >
+              Projects
+            </button>
           </li>
           <li>
-            <button class="nav-items">Skills</button>
+            <button
+              class="nav-items"
+              @click.prevent="scrollToSection('skills')"
+            >
+              Skills
+            </button>
           </li>
           <li>
-            <button class="nav-items" id="scale-item">Contact</button>
+            <button
+              class="nav-items"
+              id="scale-item"
+              @click.prevent="scrollToSection('contact')"
+            >
+              Contact
+            </button>
           </li>
           <li>
             <button class="hidden-menu" @click="toggleNav()">
@@ -56,22 +74,45 @@
     <nav class="hidden-nav-wrapper" v-if="isNavOpen">
       <ul>
         <li>
-          <button class="hidden-nav-items" @click="toggleNav()">About</button>
+          <button
+            class="hidden-nav-items"
+            @click="toggleNav(), scrollToSection('about')"
+          >
+            About
+          </button>
         </li>
         <li>
-          <button class="hidden-nav-items" @click="toggleNav()">Project</button>
+          <button
+            class="hidden-nav-items"
+            @click="toggleNav(), scrollToSection('projects')"
+          >
+            Project
+          </button>
         </li>
         <li>
-          <button class="hidden-nav-items" @click="toggleNav()">Skills</button>
+          <button
+            class="hidden-nav-items"
+            @click="toggleNav(), scrollToSection('skills')"
+          >
+            Skills
+          </button>
         </li>
         <li>
-          <button class="hidden-nav-items" @click="toggleNav()">Contact</button>
+          <button
+            class="hidden-nav-items"
+            @click="toggleNav(), scrollToSection('contact')"
+          >
+            Contact
+          </button>
         </li>
       </ul>
     </nav>
   </header>
-  <hero></hero>
-  <about></about>
+  <hero id="hero"></hero>
+  <about id="about"></about>
+  <projects id="projects"></projects>
+  <skills id="skills"></skills>
+  <contact id="contact"></contact>
 </template>
 
 <script>
@@ -84,6 +125,17 @@ export default {
   methods: {
     toggleNav() {
       this.isNavOpen = !this.isNavOpen
+    },
+    scrollToSection(sectionId) {
+      this.$nextTick(() => {
+        const section = document.getElementById(sectionId)
+        console.log('Section:', section) // Add this line
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth' })
+        } else {
+          console.log(`Section with id "${sectionId}" not found.`) // Add this line
+        }
+      })
     },
   },
 }

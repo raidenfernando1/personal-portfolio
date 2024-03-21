@@ -88,12 +88,14 @@
 @media (min-width: 1700px) {
   .hero-container {
     padding-inline: 15%;
+    height: 85vh;
   }
 }
 
 @media (min-width: 1900px) {
   .hero-container {
     padding-inline: 20%;
+    height: 70vh;
   }
 }
 
