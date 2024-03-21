@@ -31,16 +31,16 @@
       <section>
         <h1 id="title">Hello, Im Raiden Fernando.</h1>
         <p id="sub-title">
-          I am a multi-diciplinary designer and<br />
+          I am a designer and<br />
           developer with a passion for creating<br />
-          visually stunning and user-friendly digital<br />
+          visually appealing and user-friendly digital<br />
           experiences
         </p>
         <p id="about-content">
-          Whether it's a website, mobile app, or branding project, I bring a<br />
+          Whether it's a website, webapp, or branding project, I bring a<br />
           unique combination of design and development skills to deliver<br />
-          exceptional results. On this website, you'll find a selection of my<br />
-          recent work, along with information about my background, skills,<br />
+          good results. On this website, you'll find a selection of my<br />
+          recent work, along with information about my Me and my skills,<br />
           and process.
         </p>
       </section>
