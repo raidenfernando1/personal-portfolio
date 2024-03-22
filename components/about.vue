@@ -66,7 +66,7 @@
 }
 
 .right-container {
-  color: white;
+  color: var(--primary-color);
 }
 
 #title {
@@ -167,9 +167,3 @@
   }
 }
 </style>
-
-<script lang="ts">
-export default {
-  layout: 'about',
-}
-</script>

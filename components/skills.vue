@@ -38,7 +38,7 @@
 }
 
 #title {
-  font-size: 35px;
+  font-size: 2.5rem;
   margin-bottom: 50px;
   color: var(--primary-color);
 }

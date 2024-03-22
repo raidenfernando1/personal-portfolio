@@ -5,7 +5,7 @@
         <ul class="nav-items-wrapper">
           <li>
             <!-- logo -->
-            <button class="nav-items">
+            <button class="nav-items" @click.prevent="scrollToSection('hero')">
               <svg
                 width="40"
                 height="40"
@@ -126,14 +126,19 @@ export default {
     toggleNav() {
       this.isNavOpen = !this.isNavOpen
     },
+    logoClicked() {
+      this.$nextTick(() => {
+        const section = document.getElementById('hero')
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth' })
+        }
+      })
+    },
     scrollToSection(sectionId) {
       this.$nextTick(() => {
         const section = document.getElementById(sectionId)
-        console.log('Section:', section) // Add this line
         if (section) {
           section.scrollIntoView({ behavior: 'smooth' })
-        } else {
-          console.log(`Section with id "${sectionId}" not found.`) // Add this line
         }
       })
     },

@@ -116,7 +116,7 @@
 .line-height {
   padding: 1px;
   margin-right: 5%;
-  color: white;
+  color: var(--primary-color);
   background-color: var(--primary-color);
 }
 
@@ -129,11 +129,11 @@
 }
 
 .left-content-1 h1 {
-  color: white;
+  color: var(--primary-color);
 }
 
 .left-content-1 a {
-  color: white;
+  color: var(--primary-color);
   text-decoration: none;
   padding: 5px 0px;
 }
@@ -158,7 +158,7 @@
 }
 
 .left-content {
-  color: white;
+  color: var(--primary-color);
   margin-right: 5%;
 }
 
