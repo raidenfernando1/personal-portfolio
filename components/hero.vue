@@ -6,7 +6,9 @@
         Raiden Fernando<br />
         im a Web Developer
       </h1>
-      <button class="project-btn">Browse my Projects</button>
+      <button class="project-btn" @click="$emit('gotoProject')">
+        Browse my Projects
+      </button>
       <button class="resume-btn">Download my Resume</button>
     </div>
     <div class="right-container">

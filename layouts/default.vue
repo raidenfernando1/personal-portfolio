@@ -108,7 +108,7 @@
       </ul>
     </nav>
   </header>
-  <hero id="hero"></hero>
+  <hero id="hero" @goto-project="gotoProjects"></hero>
   <about id="about"></about>
   <projects id="projects"></projects>
   <skills id="skills"></skills>
@@ -126,9 +126,20 @@ export default {
     toggleNav() {
       this.isNavOpen = !this.isNavOpen
     },
+    handleFuckery(data1) {
+      console.log(data1)
+    },
     logoClicked() {
       this.$nextTick(() => {
         const section = document.getElementById('hero')
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth' })
+        }
+      })
+    },
+    gotoProjects() {
+      this.$nextTick(() => {
+        const section = document.getElementById('projects')
         if (section) {
           section.scrollIntoView({ behavior: 'smooth' })
         }
